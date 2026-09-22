@@ -485,3 +485,64 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;ba
     margin-bottom:60px !important;
   }
 }
+
+/* v19 — exact header sizing + tighter inner-page/footer spacing */
+
+/* Category header must use exactly the same typography hierarchy as the story header. */
+.hero-title.category-mode .hero-title-main{
+  font-size:clamp(32px,4.5vw,52px) !important;
+  line-height:1.25 !important;
+  color:var(--orange) !important;
+  font-weight:700 !important;
+  letter-spacing:-.035em !important;
+}
+.hero-title.category-mode .hero-title-sub{
+  font-size:clamp(20px,3vw,30px) !important;
+  line-height:1.25 !important;
+  color:var(--charcoal) !important;
+  font-weight:500 !important;
+  letter-spacing:-.035em !important;
+  margin-top:4px !important;
+}
+.hero-title.category-mode .hero-title-count{
+  font-size:15px !important;
+  line-height:1.6 !important;
+  color:var(--ink) !important;
+  font-weight:500 !important;
+  margin-top:3px !important;
+}
+
+/* Remove the excessive blank area before the footer on category pages. */
+.category-grid{
+  padding-bottom:24px !important;
+}
+
+/* On the story-list and story-reader pages, use a small, consistent breathing space
+   before the footer instead of the large gap from the previous version. */
+#storySection:not([hidden]){
+  padding-bottom:20px !important;
+}
+#storyReader:not([hidden]){
+  padding-bottom:20px !important;
+}
+#storySection:not([hidden]) ~ .about,
+#storyReader:not([hidden]) ~ .about{
+  margin-top:20px !important;
+  margin-bottom:35px !important;
+}
+
+/* Keep the same compact spacing on mobile, without touching the mobile layout itself. */
+@media(max-width:620px){
+  .category-grid{
+    padding-bottom:18px !important;
+  }
+  #storySection:not([hidden]),
+  #storyReader:not([hidden]){
+    padding-bottom:18px !important;
+  }
+  #storySection:not([hidden]) ~ .about,
+  #storyReader:not([hidden]) ~ .about{
+    margin-top:18px !important;
+    margin-bottom:35px !important;
+  }
+}

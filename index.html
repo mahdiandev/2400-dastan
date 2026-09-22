@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="۲۴۰۰ داستان؛ مجموعه‌ای از حکایت‌ها و داستان‌های فارسی">
+  <title>2400 داستان کوتاه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-heading">
+        <div class="hero-title">
+          <a class="site-logo-link" href="#" aria-label="صفحه اصلی ۲۴۰۰ داستان">
+            <img class="site-logo" src="favicon.svg" alt="لوگو ۲۴۰۰ داستان">
+          </a>
+<div class="hero-title-main">۲۴۰۰ داستان کوتاه</div>
+          <div class="hero-title-sub">رو براتون جمع‌آوری و دسته‌بندی کردیم 🔥</div>
+          <div class="hero-title-count" hidden></div>
+        </div>
+      </div>
+
+      <div class="search-wrap" id="searchBox">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="جست‌وجو در عنوان داستان‌ها..." aria-label="جست‌وجو در عنوان داستان‌ها">
+        <button id="clearSearch" class="clear-search" hidden>×</button>
+      </div>
+    </section>
+
+    <section id="categoryGrid" class="category-grid"></section>
+    <section id="storySection" hidden>
+      <button id="categoryBack" class="category-back">
+        <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 12h15m-7-7 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>بازگشت به همه دسته‌بندی‌ها</span>
+      </button>
+      <div id="categoryHeader" class="category-header" aria-live="polite"></div>
+      <div id="storyGrid" class="story-grid"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <div>—</div>
+        <h3>داستانی پیدا نشد</h3>
+        <p>عنوان دیگری را امتحان کنید.</p>
+      </div>
+    </section>
+
+    <section id="storyReader" class="reader" hidden>
+      <header class="story-reader-header">
+        <a class="site-logo-link story-logo-link" href="#" aria-label="صفحه اصلی ۲۴۰۰ داستان">
+          <img class="site-logo" src="favicon.svg" alt="لوگو ۲۴۰۰ داستان">
+        </a>
+        <div class="story-reader-site">۲۴۰۰ داستان کوتاه</div>
+        <div id="storyReaderCategory" class="story-reader-category"></div>
+        <div id="storyReaderStory" class="story-reader-story"></div>
+      </header>
+      <div class="reader-actions">
+        <button id="readerBack" class="reader-back" type="button" aria-label="بازگشت به دسته‌بندی">
+          <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-7-7 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="reader-back-label">بازگشت به دسته بندی</span>
+        </button>
+        <button id="shareStory" class="share-story" type="button" aria-label="اشتراک‌گذاری داستان">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.1c-.8 0-1.5.3-2.1.8l-7.1-4.1c.1-.3.2-.5.2-.8s-.1-.6-.2-.8l7-4.1c.6.5 1.3.8 2.2.8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .3 0 .5.1.8L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2.1-.8l7.1 4.1c-.1.2-.1.5-.1.7 0 1.7 1.3 3 3 3s3-1.3 3-3-1.3-2.9-3-2.9z"/></svg>
+          <span class="share-story-label">اشتراک‌گذاری</span>
+        </button>
+      </div>
+      <div id="shareToast" class="share-toast" role="status" aria-live="polite">لینک کپی شد</div>
+      <article>
+        <h1 id="readerTitle"></h1>
+        <div class="reader-divider"></div>
+        <div id="readerContent" class="reader-content"></div>
+      </article>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-copy">
+        <div class="about-text">
+          <p>توسعه این سایت توسط <a href="https://t.me/mahdiandev" target="_blank" rel="noopener">محمد مهدیان</a> انجام شده است.</p>
+          <p class="about-source">داستان های این وب سایت از برنامه 2400 داستان کوتاه که توسط Nova Team توسعه یافته جمع آوری شده است.</p>
+        </div>
+        <div class="social-links">
+          <a href="https://t.me/mahdiandev" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.2 18.5 19c-.23 1.05-.85 1.31-1.72.82l-4.73-3.49-2.28 2.2c-.25.25-.46.46-.94.46l.34-4.82 8.77-7.92c.38-.34-.08-.53-.59-.19L6.51 12.9l-4.65-1.46c-1.01-.32-1.03-1.01.21-1.5L20.24 3.2c.84-.31 1.57.19 1.36 1Z"/></svg>
+            <span>Telegram</span>
+          </a>
+          <a href="https://github.com/mahdiandev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 8.43 22.92c.57.1.78-.25.78-.55v-2.02c-3.17.69-3.84-1.34-3.84-1.34-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.53-.29-5.19-1.27-5.19-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.12 1.17A10.9 10.9 0 0 1 12 6.3c.97 0 1.94.13 2.85.37 2.16-1.48 3.12-1.17 3.12-1.17.62 1.57.23 2.73.11 3.02.73.8 1.18 1.82 1.18 3.07 0 4.39-2.67 5.36-5.21 5.64.41.36.78 1.07.78 2.16v3.2c0 .3.2.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
